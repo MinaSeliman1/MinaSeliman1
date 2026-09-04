@@ -10,7 +10,7 @@ Collège de Bois-de-Boulogne, Montréal · Basé à Laval, QC
 
 ## 🔭 Ce sur quoi je travaille en ce moment
 
-**StockLab** — une plateforme de simulation boursière multinuage, développée en équipe de trois selon une approche agile.
+**[StockLab](https://github.com/MarcSaad-Hadidi/StockLab)** — une plateforme de simulation boursière multinuage, développée en équipe de trois selon une approche agile.
 
 Je suis **responsable du back-end** : conception et développement de l'API REST en **ASP.NET Core** avec **Entity Framework Core**, implémentation de la logique de portefeuille et du moteur de transactions, modélisation et exploitation de la base **Azure SQL**.
 
@@ -21,13 +21,13 @@ Je contribue aussi à l'architecture **multinuage** (Azure + AWS : Service Bus, 
 ## 🛠️ Stack
 
 **Langages**
-`C#` · `Java` · `JavaScript` · `SQL` · `HTML` · `CSS` · `Python`
+`C#` · `Java` · `TypeScript` · `JavaScript` · `SQL` · `Python` · `HTML` · `CSS`
 
 **Back-end et données**
 `ASP.NET Core` · `Entity Framework Core` · `Node.js` · `API REST` · `Azure SQL` · `Conception de schémas relationnels` · `Procédures stockées` · `Architecture n-tiers`
 
 **Front-end**
-`React` · `JavaScript` · `HTML/CSS` · `Applications web transactionnelles` · `.NET MAUI` · `XAML`
+`React` · `TypeScript` · `Vite` · `HTML/CSS` · `Applications web transactionnelles` · `.NET MAUI` · `XAML`
 
 **Infonuagique et outils**
 `Microsoft Azure` · `AWS (S3, Lambda, SQS)` · `Docker` · `Git / GitHub` · `Postman` · `Visual Studio` · `Linux`
@@ -41,7 +41,7 @@ Je contribue aussi à l'architecture **multinuage** (Azure + AWS : Service Bus, 
 
 | Projet | Description | Stack |
 |---|---|---|
-| **StockLab** *(à venir)* | Plateforme de simulation boursière multinuage — gestion de portefeuille fictif, données de marché en direct, transactions simulées. Responsable du back-end et de l'architecture cloud. | ASP.NET Core · EF Core · Azure SQL · AWS · Python |
+| **[StockLab](https://github.com/MarcSaad-Hadidi/StockLab)** | Plateforme de simulation boursière multinuage — gestion de portefeuille fictif, données de marché en direct, transactions simulées. Projet d'équipe où je suis responsable du back-end et de l'architecture cloud. | ASP.NET Core · EF Core · Azure SQL · React · TypeScript · AWS · Python |
 | **[Bibliothèque](https://github.com/MinaSeliman1/View)** | Application multiplateforme de gestion de bibliothèque (Android, iOS, macOS, Windows) — catalogue, favoris, évaluations, espace administrateur. Architecture MVVM en quatre projets avec tests unitaires. | .NET MAUI · C# · MVVM · XML |
 
 ---
