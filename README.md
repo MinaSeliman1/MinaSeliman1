@@ -91,12 +91,20 @@ Je contribue aussi à l'architecture **multinuage** (Azure + AWS : Service Bus, 
 
 ---
 
-### [Bibliothèque](https://github.com/MinaSeliman1/View) — application multiplateforme
+### [Bibliothèque](https://github.com/MinaSeliman1/View) — application multiplateforme .NET MAUI
+
+Gestion de bibliothèque déployée sur Android, iOS, macOS et Windows à partir d'une base de code unique. Les lecteurs consultent un catalogue, tiennent une liste de favoris et évaluent les livres ; les administrateurs gèrent le catalogue et les comptes depuis un tableau de bord distinct, avec authentification par rôles et session persistante.
 
 **Stack et outils**
-`C#` `.NET MAUI` `XAML` `MVVM` `Data binding` `Android` `iOS` `macOS` `Windows` `Développement mobile` `Multiplateforme` `Tests unitaires` `Architecture en couches`
+`C#` `.NET 9` `.NET MAUI` `XAML` `MVVM` `AppShell` `INotifyPropertyChanged` `Data binding` `Injection de dépendances` `Programmation par interfaces` `Sérialisation XML` `Tests unitaires` `Architecture en couches` `Android` `iOS` `macOS (Mac Catalyst)` `Windows` `Multiplateforme` `Développement mobile`
 
-Catalogue, favoris, évaluations et espace administrateur, en architecture MVVM répartie sur quatre projets avec tests unitaires.
+**Ce que le projet démontre :**
+
+- **Quatre projets plutôt qu'un monolithe** — `Bibliotheque.Model` (entités du domaine, sans aucune dépendance), `Bibliotheque.Services` (logique métier), `Bibliotheque.ViewModel` (MVVM), `View` (interface .NET MAUI en XAML) — plus un projet de tests unitaires
+- **MVVM strict** : aucune logique métier dans le code-behind des pages XAML, ce qui rend la couche métier testable sans jamais lancer l'interface
+- **Services derrière des interfaces** (`IAuthService`, `IBibliothequeXmlService`, `IFavorisService`), injectés depuis `MauiProgram.cs` — remplacer la persistance par une base de données ne demanderait que d'écrire une nouvelle implémentation, sans toucher au reste de l'application
+- **Persistance par sérialisation XML** — un choix assumé pour un projet scolaire : aucun serveur, aucune dépendance externe
+- **Cibles** : Android 21+, iOS 15+, Mac Catalyst 15+, Windows 10 17763+
 
 ---
 
@@ -145,7 +153,7 @@ Catalogue, favoris, évaluations et espace administrateur, en architecture MVVM 
 | **[Ponctuel](https://github.com/MinaSeliman1/Ponctuel)** | Plateforme temps réel qui mesure la ponctualité du transport en commun : cinq microservices, du flux protobuf de la STM jusqu'au tableau de bord. | Go · Redpanda (Kafka) · Protocol Buffers · GTFS-Realtime · TimescaleDB · pgx · GraphQL (gqlgen) · Vue 3 · TypeScript · Python · FastAPI · scikit-learn · Playwright · Docker · Kubernetes · Helm · Oracle Cloud · Prometheus · gitleaks |
 | **[Trading Bot Research](https://github.com/MinaSeliman1/trading-bot)** | Recherche quantitative : quatre stratégies testées en validation walk-forward et multi-régimes, quatre rejetées. Le livrable est la méthodologie, pas une stratégie. | Python · pandas · NumPy · SciPy · scikit-learn · Matplotlib · pyarrow · pytest · SEC EDGAR (XBRL) · Alpaca · yfinance · backtesting |
 | **[StockLab](https://github.com/MarcSaad-Hadidi/StockLab)** | Plateforme de simulation boursière multinuage — portefeuille fictif, données de marché, transactions simulées. Projet d'équipe où je suis responsable du back-end et de l'architecture cloud. | C# · ASP.NET Core · EF Core · Azure SQL · Azure Service Bus · AWS Lambda · S3 · SQS · React · TypeScript · Python · Agile |
-| **[Bibliothèque](https://github.com/MinaSeliman1/View)** | Application multiplateforme de gestion de bibliothèque (Android, iOS, macOS, Windows) — catalogue, favoris, évaluations, espace administrateur. Architecture MVVM en quatre projets avec tests unitaires. | C# · .NET MAUI · XAML · MVVM · data binding · tests unitaires |
+| **[Bibliothèque](https://github.com/MinaSeliman1/View)** | Application multiplateforme de gestion de bibliothèque (Android, iOS, macOS, Windows) — catalogue, favoris, évaluations, espace administrateur. Quatre projets, MVVM strict, services derrière des interfaces, tests unitaires. | C# · .NET 9 · .NET MAUI · XAML · MVVM · injection de dépendances · sérialisation XML · tests unitaires |
 
 ---
 
