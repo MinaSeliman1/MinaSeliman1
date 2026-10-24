@@ -38,7 +38,7 @@ Une application web de gestion de quarts pour équipes de sauveteurs — un mét
 
 ### [Ponctuel](https://github.com/MinaSeliman1/Ponctuel) — plateforme temps réel, architecture microservices
 
-Une plateforme qui mesure la ponctualité réelle du transport en commun montréalais : elle décode le flux temps réel de la STM, en déduit les heures d'arrivée réellement observées, et les compare aux prédictions annoncées aux usagers. Cinq services indépendants, du protobuf jusqu'au tableau de bord.
+Une plateforme qui mesure la précision des prévisions d'arrivée du transport en commun montréalais : elle décode le flux temps réel de la STM, en déduit les heures d'arrivée réellement observées, et mesure l'écart avec les prédictions annoncées aux usagers. Cinq services indépendants, du protobuf jusqu'au tableau de bord.
 
 **Stack et outils**
 `Go 1.27` `Microservices` `Architecture événementielle` `Redpanda` `Apache Kafka (API)` `kafka-go` `Protocol Buffers` `GTFS-Realtime` `GTFS` `pgx` `TimescaleDB` `PostgreSQL 17` `Séries temporelles` `SQL` `gqlgen` `GraphQL` `Schéma GraphQL` `Python 3.12` `FastAPI` `Uvicorn` `Pydantic` `scikit-learn` `NumPy` `joblib` `httpx` `Vue 3` `TypeScript` `Vite` `vue-tsc` `Vitest` `Vue Test Utils` `jsdom` `Playwright` `Tests E2E` `Docker` `Dockerfile multi-étapes` `Docker Compose` `Kubernetes` `Helm` `helm lint` `k3s` `Oracle Cloud (OCI)` `Render` `GitHub Actions` `CI/CD` `gitleaks` `Analyse de secrets` `go vet` `pytest` `Prometheus` `Observabilité` `Git`
@@ -53,6 +53,26 @@ Une plateforme qui mesure la ponctualité réelle du transport en commun montré
 - **Déployable de trois façons** : Docker Compose, chart Helm sur Kubernetes, ou Oracle Cloud
 
 👉 **[Lire le code](https://github.com/MinaSeliman1/Ponctuel)**
+
+---
+
+### [Trading Backtests](https://github.com/MinaSeliman1/trading-backtests) — registre de recherche, huit stratégies intrajournalières
+
+Un dépôt de recherche qui regroupe huit stratégies intrajournalières, leur code, leurs tests automatisés et les résultats réellement calculés. Chaque étude a son dossier, son statut et ses limites écrites noir sur blanc, et le tableau d'ouverture donne la conclusion avant même qu'on ouvre un rapport.
+
+**Stack et outils**
+`Python 3.14` `pandas` `NumPy` `Decimal` `pytest` `Backtesting` `Validation walk-forward` `Tests IS/OOS` `Analyse multi-régimes` `Alpaca SIP` `Données minute` `VWAP` `Séries temporelles` `Audit de résultats` `Reproductibilité` `Empreintes de fichiers` `requirements-lock` `Pine Script` `TradingView` `PowerShell` `Planificateur de tâches Windows` `Git` `Markdown`
+
+**Ce que le projet démontre :**
+
+- **Un registre d'études, pas une collection de scripts** — chaque stratégie possède son dossier daté, ses paramètres, son fichier de validation et son statut ; un modèle d'étude et un `CONTRIBUTING.md` encadrent l'ajout d'un nouveau test
+- **Des conclusions majoritairement négatives, assumées** — sur huit stratégies (FVG, Noise Area, Gap Reversal, momentum de clôture, ORB 5 minutes, retour VWAP, compression NR7, Nowick FX), la plupart ne démontrent aucun avantage après coûts. C'est écrit dans le tableau d'ouverture, pas enterré en annexe
+- **La prudence statistique fait partie des rapports** : « B n'est pas un nouvel OOS aveugle », « QQQ B sans ses trois meilleurs jours devient négatif », « ces statistiques ne qualifient pas un bot pour le réel »
+- **Audits indépendants et recouvrants** — jusqu'à 70 934 lignes vérifiées pour une seule étude, audit `Decimal` séparé, et un vérificateur d'intégrité sans dépendance externe (`tools/verify_snapshot.py`)
+- **Deux bots en simulation observée** (QQQ Noise Area et QQQ ORB) : mode *shadow* sur données SIP différées, aucun ordre réel ni paper, transport restreint en lecture seule, parité reproduite sur 2 707 séances et 2 688 transactions. Le démarrage est documenté comme une preuve opérationnelle — pas comme un résultat de rentabilité
+- **Séparation stricte des données sensibles** — clés d'API et historiques minute complets restent locaux ; le dépôt ne conserve que les résultats dérivés, la provenance et les scripts d'acquisition
+
+👉 **[Lire le registre](https://github.com/MinaSeliman1/trading-backtests)**
 
 ---
 
@@ -111,7 +131,7 @@ Gestion de bibliothèque déployée sur Android, iOS, macOS et Windows à partir
 ## 🛠️ Stack complète
 
 **Langages**
-`C#` · `Go` · `Python` · `TypeScript` · `JavaScript` · `Java` · `SQL` · `HTML5` · `CSS3` · `Bash` · `YAML` · `Markdown` · `GraphQL (SDL)` · `Protocol Buffers`
+`C#` · `Go` · `Python` · `TypeScript` · `JavaScript` · `Java` · `SQL` · `HTML5` · `CSS3` · `Bash` · `PowerShell` · `YAML` · `Markdown` · `GraphQL (SDL)` · `Protocol Buffers` · `Pine Script`
 
 **Back-end**
 `ASP.NET Core (.NET 9)` · `Minimal APIs` · `Entity Framework Core` · `Node.js` · `FastAPI` · `Uvicorn` · `Pydantic` · `gqlgen` · `API REST` · `GraphQL` · `OpenAPI / Swagger` · `Architecture microservices` · `Architecture événementielle` · `Architecture en couches et n-tiers` · `Domain-Driven Design` · `Injection de dépendances` · `Programmation asynchrone` · `Conception d'API`
@@ -123,7 +143,7 @@ Gestion de bibliothèque déployée sur Android, iOS, macOS et Windows à partir
 `PostgreSQL` · `TimescaleDB` · `Azure SQL` · `SQL Server` · `SQL` · `LINQ` · `Npgsql` · `pgx` · `Conception de schémas` · `Migrations` · `Indexation` · `Séries temporelles` · `Modélisation de données`
 
 **Données et analyse**
-`pandas` · `NumPy` · `SciPy` · `scikit-learn` · `Matplotlib` · `pyarrow` · `Parquet` · `joblib` · `API SEC EDGAR (XBRL)` · `Validation walk-forward` · `Backtesting` · `ETL` · `Apprentissage automatique`
+`pandas` · `NumPy` · `SciPy` · `scikit-learn` · `Matplotlib` · `pyarrow` · `Parquet` · `joblib` · `Decimal` · `API SEC EDGAR (XBRL)` · `Alpaca SIP` · `Validation walk-forward` · `Tests IS/OOS` · `Backtesting` · `Audit de résultats` · `Reproductibilité` · `ETL` · `Apprentissage automatique`
 
 **Messagerie et temps réel**
 `Apache Kafka (API)` · `Redpanda` · `kafka-go` · `Azure Service Bus` · `Amazon SQS` · `Publication/abonnement` · `Protocol Buffers` · `GTFS-Realtime` · `Traitement de flux`
@@ -150,7 +170,8 @@ Gestion de bibliothèque déployée sur Android, iOS, macOS et Windows à partir
 | Projet | Description | Stack |
 |---|---|---|
 | **[Vigie](https://github.com/MinaSeliman1/vigie)** — [démo en ligne](https://minaseliman1.github.io/vigie/) | Gestion de quarts pour équipes de sauveteurs : horaires, échanges approuvés, suivi des certifications. Conçu, développé et déployé seul — 47 endpoints, 70 tests, architecture en quatre couches, CI/CD. | C# · ASP.NET Core · .NET 9 · EF Core · PostgreSQL · React 19 · TypeScript · Vite · JWT · OpenAPI · xUnit · Vitest · Docker · GitHub Actions · Render · Supabase · GitHub Pages |
-| **[Ponctuel](https://github.com/MinaSeliman1/Ponctuel)** | Plateforme temps réel qui mesure la ponctualité du transport en commun : cinq microservices, du flux protobuf de la STM jusqu'au tableau de bord. | Go · Redpanda (Kafka) · Protocol Buffers · GTFS-Realtime · TimescaleDB · pgx · GraphQL (gqlgen) · Vue 3 · TypeScript · Python · FastAPI · scikit-learn · Playwright · Docker · Kubernetes · Helm · Oracle Cloud · Prometheus · gitleaks |
+| **[Ponctuel](https://github.com/MinaSeliman1/Ponctuel)** | Plateforme temps réel qui mesure la précision des prévisions d'arrivée du transport en commun : cinq microservices, du flux protobuf de la STM jusqu'au tableau de bord. | Go · Redpanda (Kafka) · Protocol Buffers · GTFS-Realtime · TimescaleDB · pgx · GraphQL (gqlgen) · Vue 3 · TypeScript · Python · FastAPI · scikit-learn · Playwright · Docker · Kubernetes · Helm · Oracle Cloud · Prometheus · gitleaks |
+| **[Trading Backtests](https://github.com/MinaSeliman1/trading-backtests)** | Registre de recherche : huit stratégies intrajournalières, leur code, leurs tests et leurs résultats datés, avec le statut et les limites de chacune. Deux bots en simulation observée, sans aucun ordre réel. | Python · pandas · NumPy · Decimal · pytest · backtesting · validation walk-forward · Alpaca SIP · Pine Script · PowerShell |
 | **[Trading Bot Research](https://github.com/MinaSeliman1/trading-bot)** | Recherche quantitative : quatre stratégies testées en validation walk-forward et multi-régimes, quatre rejetées. Le livrable est la méthodologie, pas une stratégie. | Python · pandas · NumPy · SciPy · scikit-learn · Matplotlib · pyarrow · pytest · SEC EDGAR (XBRL) · Alpaca · yfinance · backtesting |
 | **[StockLab](https://github.com/MarcSaad-Hadidi/StockLab)** | Plateforme de simulation boursière multinuage — portefeuille fictif, données de marché, transactions simulées. Projet d'équipe où je suis responsable du back-end et de l'architecture cloud. | C# · ASP.NET Core · EF Core · Azure SQL · Azure Service Bus · AWS Lambda · S3 · SQS · React · TypeScript · Python · Agile |
 | **[Bibliothèque](https://github.com/MinaSeliman1/View)** | Application multiplateforme de gestion de bibliothèque (Android, iOS, macOS, Windows) — catalogue, favoris, évaluations, espace administrateur. Quatre projets, MVVM strict, services derrière des interfaces, tests unitaires. | C# · .NET 9 · .NET MAUI · XAML · MVVM · injection de dépendances · sérialisation XML · tests unitaires |
@@ -164,7 +185,7 @@ Gestion de bibliothèque déployée sur Android, iOS, macOS et Windows à partir
 
 Cours pertinents : programmation objet 1 et 2, structures de données et algorithmes, applications web transactionnelles, systèmes de bases de données, génie logiciel, sécurité des applications, architecture des réseaux, projet de développement de logiciel, applications mobiles.
 
-**Certification** — Cisco Networking Academy, *CCNA : Présentation des réseaux* (août 2025)
+**Formation complémentaire** — Cisco Networking Academy, *CCNA : Introduction aux réseaux* (cours réussi, 2025)
 
 ---
 
