@@ -27,7 +27,7 @@ Une application web de gestion de quarts pour équipes de sauveteurs — un mét
 
 - **Architecture en quatre couches** — domaine, application, infrastructure, API — avec un domaine qui ne dépend d'aucune bibliothèque externe
 - **47 endpoints REST** en ASP.NET Core (.NET 9) avec Entity Framework Core sur PostgreSQL, et 14 migrations
-- **70 tests xUnit** : 32 tests de domaine qui s'exécutent sans base de données ni serveur, et 38 tests d'intégration — dont un qui verrouille le contrat OpenAPI de l'API
+- **78 tests xUnit** : 36 tests de domaine qui s'exécutent sans base de données ni serveur, et 42 tests d'intégration — dont un qui verrouille le contrat OpenAPI de l'API
 - **Cinq règles métier codifiées** : certifications, chevauchements, échanges approuvés, quotas horaires, saison d'ouverture
 - **Sécurité et renseignements personnels** : authentification JWT par rôles, isolation des données entre organisations, mots de passe hachés en PBKDF2, limitation du débit, révocation des sessions, journal d'audit exportable, export et suppression des données d'un compte
 - **Exploitation** : points de santé et de métriques, corrélation des requêtes, intégration continue GitHub Actions, API sur Render, PostgreSQL sur Supabase, interface React + TypeScript sur GitHub Pages
@@ -169,7 +169,7 @@ Gestion de bibliothèque déployée sur Android, iOS, macOS et Windows à partir
 
 | Projet | Description | Stack |
 |---|---|---|
-| **[Vigie](https://github.com/MinaSeliman1/vigie)** — [démo en ligne](https://minaseliman1.github.io/vigie/) | Gestion de quarts pour équipes de sauveteurs : horaires, échanges approuvés, suivi des certifications. Conçu, développé et déployé seul — 47 endpoints, 70 tests, architecture en quatre couches, CI/CD. | C# · ASP.NET Core · .NET 9 · EF Core · PostgreSQL · React 19 · TypeScript · Vite · JWT · OpenAPI · xUnit · Vitest · Docker · GitHub Actions · Render · Supabase · GitHub Pages |
+| **[Vigie](https://github.com/MinaSeliman1/vigie)** — [démo en ligne](https://minaseliman1.github.io/vigie/) | Gestion de quarts pour équipes de sauveteurs : horaires, échanges approuvés, suivi des certifications. Conçu, développé et déployé seul — 47 endpoints, 78 tests, architecture en quatre couches, CI/CD. | C# · ASP.NET Core · .NET 9 · EF Core · PostgreSQL · React 19 · TypeScript · Vite · JWT · OpenAPI · xUnit · Vitest · Docker · GitHub Actions · Render · Supabase · GitHub Pages |
 | **[Ponctuel](https://github.com/MinaSeliman1/Ponctuel)** | Plateforme temps réel qui mesure la précision des prévisions d'arrivée du transport en commun : cinq microservices, du flux protobuf de la STM jusqu'au tableau de bord. | Go · Redpanda (Kafka) · Protocol Buffers · GTFS-Realtime · TimescaleDB · pgx · GraphQL (gqlgen) · Vue 3 · TypeScript · Python · FastAPI · scikit-learn · Playwright · Docker · Kubernetes · Helm · Oracle Cloud · Prometheus · gitleaks |
 | **[Trading Backtests](https://github.com/MinaSeliman1/trading-backtests)** | Registre de recherche : huit stratégies intrajournalières, leur code, leurs tests et leurs résultats datés, avec le statut et les limites de chacune. Deux bots en simulation observée, sans aucun ordre réel. | Python · pandas · NumPy · Decimal · pytest · backtesting · validation walk-forward · Alpaca SIP · Pine Script · PowerShell |
 | **[Trading Bot Research](https://github.com/MinaSeliman1/trading-bot)** | Recherche quantitative : quatre stratégies testées en validation walk-forward et multi-régimes, quatre rejetées. Le livrable est la méthodologie, pas une stratégie. | Python · pandas · NumPy · SciPy · scikit-learn · Matplotlib · pyarrow · pytest · SEC EDGAR (XBRL) · Alpaca · yfinance · backtesting |
@@ -197,7 +197,7 @@ Trilingue — **français**, **anglais**, **arabe égyptien**, à l'oral et à l
 
 ## 📫 Me joindre
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-mina--seliman-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mina-seliman-3b9184326)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-minaseliman-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/minaseliman)
 [![Courriel](https://img.shields.io/badge/Courriel-minaseliman2007@hotmail.com-D14836?style=flat-square&logo=maildotru&logoColor=white)](mailto:minaseliman2007@hotmail.com)
 
 Ouvert aux stages en développement logiciel, web, back-end, données ou infonuagique dans la région de Montréal et Laval.
